@@ -28,7 +28,7 @@ abstract class PizzaCity(
         {
             println("Продано напитков: $drinkSaleCount")
             println("Процент людей, которые покупают кофе: ${drinkSaleCount / oneProcentOfPeople}%")
-            println("Процент людей, которые не покупают кофе: ${countOfPeople - drinkSaleCount / oneProcentOfPeople}%")
+            println("Процент людей, которые не покупают кофе: ${(countOfPeople - drinkSaleCount) / oneProcentOfPeople}%")
             money += drinkSaleCount * drinkSalePrice
         }
         if(this is CheckPhoto)
@@ -36,7 +36,7 @@ abstract class PizzaCity(
             println("Показано чеков: $checkCount")
             println("Общая сумма скидок по чекам: ${checkCount * checkDiscount}")
             println("Процент людей, которые предъявляют фотографию чека: ${checkCount / oneProcentOfPeople}%")
-            println("Процент людей, которые не предъявляют фотографию чека: ${countOfPeople - checkCount / oneProcentOfPeople}%")
+            println("Процент людей, которые не предъявляют фотографию чека: ${(countOfPeople - checkCount) / oneProcentOfPeople}%")
 
             money -= checkCount * checkDiscount
         }
